@@ -1,0 +1,1118 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+    background: #020611;
+}
+
+/* ===========================
+BACKGROUND
+=========================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background-color: #020611;
+    overflow: hidden;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    z-index: 1;
+    background: url('../img/backs.png') center center / cover no-repeat;
+    filter: blur(2px);
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(ellipse at center, 
+        rgba(2, 6, 17, 0.3) 0%, 
+        rgba(2, 6, 17, 0.6) 50%,
+        rgba(2, 6, 17, 0.85) 100%);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.1), 
+        rgba(0, 0, 0, 0.5));
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 15%;
+    min-width: 80px;
+}
+
+nav {
+    display: flex;
+    gap: 45px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #69b4ff;
+}
+
+.buy-btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #3f82ff;
+    padding: 15px 35px;
+    border-radius: 12px;
+    background: rgba(33, 70, 170, .18);
+    backdrop-filter: blur(12px);
+    transition: .35s;
+    box-shadow: 0 0 20px rgba(30, 120, 255, .3);
+    white-space: nowrap;
+}
+
+.buy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px #2f8fff;
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+/* ===========================
+MOON
+=========================== */
+
+.moon {
+    position: absolute;
+    right: 12%;
+    top: 120px;
+    width: 95px;
+    opacity: .95;
+    filter: drop-shadow(0 0 25px #5ea8ff);
+}
+
+/* ===========================
+TITLE
+=========================== */
+
+.title {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.title img {
+    width: 30%;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.subtitle {
+    margin-top: 35px;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.description {
+    margin-top: 18px;
+    color: #b7c8e8;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* ===========================
+CONTENT
+=========================== */
+
+.content {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 0 20px;
+}
+
+/* ===========================
+MODEL
+=========================== */
+
+.model-wrapper {
+    position: relative;
+    width: 560px;
+    height: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#viewer {
+    width: 520px;
+    height: 520px;
+    z-index: 5;
+}
+
+.glow-ring {
+    position: absolute;
+    bottom: 30px;
+    width: 340px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid rgba(70, 170, 255, .65);
+    box-shadow: 0 0 35px #2d89ff, inset 0 0 25px #2d89ff;
+    filter: blur(.2px);
+}
+
+/* ===========================
+FEATURES
+=========================== */
+
+.features {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.feature {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(14, 30, 62, .35);
+    border: 1px solid rgba(90, 150, 255, .25);
+    backdrop-filter: blur(18px);
+    transition: .35s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(66, 151, 255, .35);
+}
+
+.icon {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(25, 60, 120, .45);
+    border: 1px solid rgba(110, 180, 255, .35);
+    flex-shrink: 0;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #b7c8e8;
+    line-height: 1.6;
+}
+
+/* ===========================
+SCROLL
+=========================== */
+
+.scroll {
+    margin-top: 40px;
+    text-align: center;
+    color: #b8cfff;
+    letter-spacing: 2px;
+    opacity: .85;
+}
+
+/* ===========================
+   CITY BACKGROUND
+=========================== */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 340px;
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, .95),
+            rgba(0, 0, 0, .2),
+            transparent),
+        url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    opacity: .45;
+    z-index: -1;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+    padding: 70px 20px;
+    border-top: 1px solid rgba(70, 120, 255, .15);
+    background:
+        linear-gradient(to bottom,
+            rgba(4, 9, 18, .3),
+            rgba(2, 5, 10, .95));
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 52px;
+    color: #66aaff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 15px rgba(60, 150, 255, .7);
+}
+
+.stats span {
+    color: #b7c8e8;
+    font-size: 16px;
+}
+
+/* ===========================
+   LIGHT EFFECTS
+=========================== */
+
+.model-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle,
+            rgba(70, 150, 255, .45) 0%,
+            rgba(70, 150, 255, .15) 45%,
+            transparent 70%);
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.model-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    border: 1px solid rgba(60, 150, 255, .12);
+    animation: rotateRing 30s linear infinite;
+}
+
+/* ===========================
+   FEATURE GLOW
+=========================== */
+
+.feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background:
+        linear-gradient(130deg,
+            rgba(80, 170, 255, .12),
+            transparent);
+    opacity: 0;
+    transition: .35s;
+}
+
+.feature {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature:hover::before {
+    opacity: 1;
+}
+
+/* ===========================
+   БУРГЕР МЕНЮ
+=========================== */
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+.desktop-buy {
+    display: block;
+}
+
+.mobile-buy {
+    display: none !important;
+}
+
+/* ===================================================
+   АДАПТИВНОСТЬ
+   =================================================== */
+
+/* ---------- Для планшетов и ноутбуков (1100px) ---------- */
+@media (max-width: 1100px) {
+
+    /* ТОЛЬКО ДЛЯ ЭТОГО БЛОКА - МЕНЯЕМ РАССТОЯНИЕ */
+    .hero {
+        padding-top: 80px; /* Уменьшаем отступ */
+    }
+
+    .moon {
+        top: 80px; /* Сдвигаем луну */
+    }
+
+    .content {
+        margin-top: 50px; /* Уменьшаем отступ */
+    }
+
+    /* ПОКАЗЫВАЕМ БУРГЕР */
+    .burger-menu {
+        display: flex;
+        position: fixed;
+        top: 25px;
+        left: 25px;
+    }
+
+    /* СКРЫВАЕМ ЛОГОТИП */
+    .logo {
+        display: none !important;
+    }
+
+    /* ХЕДЕР ВЫРАВНИВАЕМ ВПРАВО */
+    header {
+        justify-content: flex-end;
+        padding: 25px 40px;
+    }
+
+    .desktop-buy {
+        display: none;
+    }
+
+    .mobile-buy {
+        display: block !important;
+    }
+
+    /* Мобильная навигация */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        background: rgba(2, 6, 17, 0.95);
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 40px;
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 1000;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+        border-left: 1px solid rgba(90, 150, 255, 0.15);
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav a {
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 10px;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    nav a:hover {
+        opacity: 1;
+        color: #69b4ff;
+        background: rgba(59, 130, 255, 0.1);
+    }
+
+    .mobile-buy {
+        padding: 15px 50px !important;
+        font-size: 18px !important;
+        border: 1px solid #3f82ff;
+        border-radius: 12px;
+        background: rgba(33, 70, 170, 0.3);
+        transition: all 0.3s ease;
+        color: #fff;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(30, 120, 255, 0.2);
+        margin-top: 20px;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .mobile-buy:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 30px #2f8fff;
+        background: rgba(33, 70, 170, 0.5);
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
+
+/* ---------- Для планшетов (768px) ---------- */
+@media (max-width: 768px) {
+
+    /* ЕЩЁ БОЛЬШЕ УМЕНЬШАЕМ РАССТОЯНИЕ */
+    .hero {
+        padding-top: 60px;
+    }
+
+    .moon {
+        top: 60px;
+        width: 70px;
+    }
+
+    .content {
+        margin-top: 30px;
+        gap: 40px;
+    }
+
+    .burger-menu {
+        top: 20px;
+        left: 20px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .title img {
+        width: 45%;
+        max-width: 300px;
+        min-width: 150px;
+    }
+
+    .subtitle {
+        font-size: 28px;
+        margin-top: 25px;
+    }
+
+    .description {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .model-wrapper {
+        width: 400px;
+        height: 400px;
+    }
+
+    #viewer {
+        width: 360px;
+        height: 360px;
+    }
+
+    .glow-ring {
+        width: 260px;
+        height: 60px;
+    }
+
+    .features {
+        width: 90%;
+        max-width: 500px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature {
+        flex: 1 1 200px;
+        min-width: 200px;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .stats h2 {
+        font-size: 42px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .left {
+        order: 2;
+    }
+
+    .right {
+        order: 3;
+    }
+
+    .model-wrapper {
+        order: 1;
+    }
+
+}
+
+/* ---------- Для мобильных телефонов (480px) ---------- */
+@media (max-width: 480px) {
+
+    /* МИНИМАЛЬНОЕ РАССТОЯНИЕ */
+    .hero {
+        padding-top: 50px;
+    }
+
+    .moon {
+        top: 50px;
+        width: 50px;
+        right: 5%;
+    }
+
+    .content {
+        margin-top: 20px;
+        gap: 30px;
+    }
+
+    .burger-menu {
+        width: 26px;
+        height: 19px;
+        top: 15px;
+        left: 15px;
+        z-index: 1001 !important;
+    }
+
+    .burger-menu span {
+        height: 2px;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        max-width: 100%;
+        padding: 30px 20px;
+        gap: 20px;
+        z-index: 1000 !important;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+        backdrop-filter: none !important;
+    }
+
+    .mobile-buy {
+        padding: 12px 40px !important;
+        font-size: 16px !important;
+        backdrop-filter: none !important;
+    }
+
+    .menu-overlay {
+        z-index: 999 !important;
+    }
+
+    .title img {
+        width: 55%;
+        max-width: 250px;
+        min-width: 120px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .description {
+        font-size: 15px;
+        padding: 0 15px;
+        margin-top: 12px;
+    }
+
+    .model-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+
+    #viewer {
+        width: 290px;
+        height: 290px;
+    }
+
+    .glow-ring {
+        width: 200px;
+        height: 50px;
+        bottom: 15px;
+    }
+
+    .features {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .feature {
+        flex: 1 1 100%;
+        padding: 15px;
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .feature h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .feature p {
+        font-size: 14px;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 35px;
+        padding: 40px 20px;
+    }
+
+    .stats h2 {
+        font-size: 36px;
+    }
+
+    .stats span {
+        font-size: 14px;
+    }
+
+    .scroll {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .model-wrapper::before {
+        width: 280px;
+        height: 280px;
+    }
+
+    .model-wrapper::after {
+        width: 380px;
+        height: 380px;
+    }
+
+    .hero::after {
+        height: 200px;
+    }
+
+}
+
+/* ---------- Для очень маленьких экранов (360px) ---------- */
+@media (max-width: 360px) {
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .moon {
+        top: 40px;
+        width: 40px;
+    }
+
+    .content {
+        margin-top: 15px;
+        gap: 20px;
+    }
+
+    .burger-menu {
+        top: 12px;
+        left: 12px;
+    }
+
+    .model-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    #viewer {
+        width: 240px;
+        height: 240px;
+    }
+
+    .glow-ring {
+        width: 160px;
+        height: 40px;
+        bottom: 10px;
+    }
+
+    .feature {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .feature h3 {
+        font-size: 16px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .title img {
+        width: 55%;
+        max-width: 200px;
+    }
+
+    .stats h2 {
+        font-size: 30px;
+    }
+
+    .stats span {
+        font-size: 12px;
+    }
+
+    .model-wrapper::before {
+        width: 220px;
+        height: 220px;
+    }
+
+    .model-wrapper::after {
+        width: 300px;
+        height: 300px;
+    }
+
+}
+
+/* ---------- Для горизонтальной ориентации на мобильных ---------- */
+@media (max-height: 600px) and (orientation: landscape) {
+
+    .hero {
+        padding-top: 60px;
+        min-height: auto;
+        padding-bottom: 20px;
+    }
+
+    .moon {
+        top: 50px;
+        width: 40px;
+    }
+
+    .content {
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .burger-menu {
+        top: 15px;
+        left: 15px;
+    }
+
+    .model-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    #viewer {
+        width: 200px;
+        height: 200px;
+    }
+
+    .glow-ring {
+        width: 140px;
+        height: 35px;
+    }
+
+    .features {
+        gap: 15px;
+    }
+
+    .feature {
+        padding: 10px;
+    }
+
+    .feature h3 {
+        font-size: 16px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .title img {
+        width: 25%;
+        max-width: 150px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .description {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .stats {
+        padding: 30px 20px;
+        gap: 40px;
+    }
+
+    .stats h2 {
+        font-size: 28px;
+    }
+
+    .scroll {
+        display: none;
+    }
+
+}
+
+/* ---------- Для экранов с высоким разрешением (Retina) ---------- */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .background::before {
+        background-image: url('../img/back@2x.png');
+    }
+
+    .hero::after {
+        background-image: url('../img/bg@2x.jpg');
+    }
+
+}
+
+/* ---------- Для экранов с затемнением (prefers-color-scheme) ---------- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #020611;
+    }
+}
+
+/* ---------- Для уменьшения анимации (accessibility) ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .model-wrapper,
+    .moon,
+    .buy-btn,
+    .scroll {
+        animation: none !important;
+    }
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.model-wrapper {
+    animation: float 6s ease-in-out infinite;
+}
+
+.moon {
+    animation: float 10s ease-in-out infinite;
+}
+
+.buy-btn {
+    animation: float 5s ease-in-out infinite;
+}
+
+.scroll {
+    animation: float 2.5s ease-in-out infinite;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07101d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b84ff;
+    border-radius: 30px;
+}
